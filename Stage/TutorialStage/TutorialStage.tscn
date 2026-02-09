@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cwh8h13sbp2jy" path="res://Entities/Player/Player.tscn" id="1_ggcid"]
 [ext_resource type="Script" uid="uid://cg3ogkcxe1x5r" path="res://Entities/Player/player.gd" id="2_viuuj"]
 [ext_resource type="Texture2D" uid="uid://cccxa22ajp8ba" path="res://Stage/TutorialStage/Swampset.png" id="3_usrr6"]
+[ext_resource type="Script" uid="uid://dmxbmvpm5qj1o" path="res://Entities/Utilities/label.gd" id="4_v1d3m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1d3m"]
 texture = ExtResource("3_usrr6")
@@ -39,13 +40,6 @@ sources/0 = SubResource("TileSetAtlasSource_v1d3m")
 
 [node name="TutorialStage" type="Node2D" unique_id=1790441739]
 
-[node name="Player" parent="." unique_id=729460782 instance=ExtResource("1_ggcid")]
-position = Vector2(-5, -604)
-script = ExtResource("2_viuuj")
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=263971289]
-zoom = Vector2(3, 3)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=330582427]
 
 [node name="TileMap" type="TileMap" parent="StaticBody2D" unique_id=364542627]
@@ -55,3 +49,22 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 0, 1, 131072, 0, 2, 196608, 0, 3,
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=315889668]
 shape = SubResource("WorldBoundaryShape2D_viuuj")
+
+[node name="Player" parent="." unique_id=729460782 instance=ExtResource("1_ggcid")]
+position = Vector2(-66, -95)
+script = ExtResource("2_viuuj")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=263971289]
+zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=232799843]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=967827900]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+script = ExtResource("4_v1d3m")
+character_path = NodePath("../../Player")
