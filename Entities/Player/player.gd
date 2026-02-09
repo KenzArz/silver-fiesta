@@ -19,9 +19,8 @@ func _physics_process(delta: float) -> void:
 	
 	if direction != 0:
 		currentAnimation.play("animationWalk")
-		velocity.x = direction * SPEED
 		currentAnimation.flip_h = direction < 0
-
+		velocity.x = direction * SPEED
 	else:
 		currentAnimation.play("animationIdle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
