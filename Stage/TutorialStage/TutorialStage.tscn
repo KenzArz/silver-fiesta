@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cccxa22ajp8ba" path="res://Stage/TutorialStage/Swampset.png" id="3_usrr6"]
 [ext_resource type="Script" uid="uid://bciyukkrrh6vs" path="res://Stage/Ultilities/camera_2d.gd" id="4_ldson"]
 [ext_resource type="Script" uid="uid://dmxbmvpm5qj1o" path="res://Entities/Utilities/label.gd" id="4_v1d3m"]
+[ext_resource type="Script" uid="uid://cetb5ytyvj626" path="res://Stage/crossline.gd" id="5_lha42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1d3m"]
 texture = ExtResource("3_usrr6")
@@ -59,6 +60,9 @@ script = ExtResource("2_viuuj")
 zoom = Vector2(3, 3)
 script = ExtResource("4_ldson")
 target = NodePath("..")
+
+[node name="Node2D" type="Node2D" parent="Player/Camera2D" unique_id=2110574856]
+script = ExtResource("5_lha42")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=232799843]
 
